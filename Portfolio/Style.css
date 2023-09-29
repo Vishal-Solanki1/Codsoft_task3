@@ -1,0 +1,64 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #f0f0f0, #d1d1d1); /* Light grey background gradient */
+}
+
+.calculator {
+    background-color: grey; /* Grey background color for the calculator */
+    border: 1px solid grey; /* Grey border color */
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+    max-width: 400px;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    border: none;
+    padding: 24px;
+    margin: 10px;
+    background: transparent;
+    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+    font-size: 40px;
+    text-align: right;
+    cursor: pointer;
+    color: red; /* Red text color for the screen */
+}
+
+input::placeholder {
+    color: #333; /* Dark text color for placeholder */
+}
+
+button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: transparent;
+    color: #333; /* Dark text color */
+    font-size: 20px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.equalBtn {
+    background-color: #fb7c14;
+    color: #fff; /* White text color for equal button */
+}
+
+.operator {
+    color: #6dee0a;
+}

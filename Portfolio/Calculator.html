@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="Style.css">
+    <style>
+        /* Your existing CSS styles here */
+    </style>
+    <title>Calculator - By Vishal Solanki</title>
+</head>
+<body>
+<div class="calculator">
+    <input type="text" id="inputBox" placeholder="0" />
+    <div class="button-container">
+        <button class="button operator" onclick="clearInput()">AC</button>
+        <button class="button operator" onclick="deleteLastChar()">DEL</button>
+        <button class="button operator" onclick="appendToInput('%')">%</button>
+        <button class="button operator" onclick="appendToInput('/')">/</button>
+        <button class="button" onclick="appendToInput('7')">7</button>
+        <button class="button" onclick="appendToInput('8')">8</button>
+        <button class="button" onclick="appendToInput('9')">9</button>
+        <button class="button operator" onclick="appendToInput('*')">*</button>
+        <button class="button" onclick="appendToInput('4')">4</button>
+        <button class="button" onclick="appendToInput('5')">5</button>
+        <button class="button" onclick="appendToInput('6')">6</button>
+        <button class="button operator" onclick="appendToInput('-')">-</button>
+        <button class="button" onclick="appendToInput('1')">1</button>
+        <button class="button" onclick="appendToInput('2')">2</button>
+        <button class="button" onclick="appendToInput('3')">3</button>
+        <button class="button operator" onclick="appendToInput('+')">+</button>
+        <button class="button" onclick="appendToInput('00')">00</button>
+        <button class="button" onclick="appendToInput('0')">0</button>
+        <button class="button" onclick="appendToInput('.')">.</button>
+        <button class="button equalBtn" onclick="calculateResult()">=</button>
+    </div>
+</div>
+
+<script>
+    let currentInput = '';
+
+    // Function to append a value to the input field
+    function appendToInput(value) {
+        currentInput += value;
+        document.getElementById('inputBox').value = currentInput;
+    }
+
+    // Function to clear the input field
+    function clearInput() {
+        currentInput = '';
+        document.getElementById('inputBox').value = '';
+    }
+
+    // Function to delete the last character from the input field
+    function deleteLastChar() {
+        currentInput = currentInput.slice(0, -1);
+        document.getElementById('inputBox').value = currentInput;
+    }
+
+    // Function to calculate the result
+    function calculateResult() {
+        try {
+            currentInput = eval(currentInput);
+            document.getElementById('inputBox').value = currentInput;
+        } catch (error) {
+            document.getElementById('inputBox').value = 'Error';
+        }
+    }
+</script>
+</body>
+</html>
